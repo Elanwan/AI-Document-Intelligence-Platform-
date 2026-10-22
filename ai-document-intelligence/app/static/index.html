@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document Intelligence</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div><span class="eyebrow">AI WORKFLOW</span><h1>Document Intelligence</h1></div>
+      <span id="health" class="status">Checking service…</span>
+    </header>
+
+    <section class="hero grid">
+      <div>
+        <p class="kicker">Classify. Extract. Validate.</p>
+        <h2>Turn business PDFs into reviewable data.</h2>
+        <p class="muted">A production-minded demo using a local ML classifier, deterministic extraction rules and a human review queue.</p>
+      </div>
+      <form id="upload-form" class="upload-card">
+        <label for="pdf">Choose a text-based PDF</label>
+        <input id="pdf" name="file" type="file" accept="application/pdf" required>
+        <button type="submit">Process document</button>
+        <p id="upload-message" class="muted small"></p>
+      </form>
+    </section>
+
+    <section id="result-section" class="panel hidden">
+      <div class="panel-title"><h3>Latest result</h3><span id="result-badge" class="badge"></span></div>
+      <div id="result-metrics" class="metrics"></div>
+      <div class="split">
+        <div><h4>Extracted fields</h4><div id="fields"></div></div>
+        <div><h4>Validation</h4><div id="issues"></div></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title"><div><h3>Human review queue</h3><p class="muted small">Documents with low confidence or validation errors.</p></div><button id="refresh" class="secondary">Refresh</button></div>
+      <div id="queue" class="queue"><p class="muted">Loading…</p></div>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
+
